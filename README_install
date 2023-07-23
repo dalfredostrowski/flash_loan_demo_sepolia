@@ -1,0 +1,15 @@
+1) log into c.5 AWS EC2 instance
+
+
+2) install following software
+
+
+sudo apt-get update
+# unlike windows I could not successfully use a later version of node
+curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+sudo bash nodesource_setup.sh
+sudo apt install nodejs build-essential
+npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
+npm i @aave/core-v3  dotenv
+
+3.)
