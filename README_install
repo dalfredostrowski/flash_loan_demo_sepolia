@@ -1,8 +1,7 @@
 1) log into c.5 AWS EC2 instance
 
 
-2) install following software
-
+2) install following software (if you have a software compatibility, then check against my package.json and install to the specific version on this repository for a quick resolution)
 
 sudo apt-get update
 # unlike windows I could not successfully use a later version of node
@@ -12,4 +11,35 @@ sudo apt install nodejs build-essential
 npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
 npm i @aave/core-v3  dotenv
 
-3.)
+3.) Obtain the private key from your account that you are going to use sepolia ethernet
+
+4.) Obtain your sepolia endpoint from infura ( or similar provider ) 
+
+5.) Obtain AAVE address information ( provided below - though it could change )
+
+https://docs.aave.com/developers/deployed-contracts/v3-testnet-addresses
+
+PoolAddressesProvider-Aave
+0x0496275d34753A48320CA58103d5220d394FF77F
+
+USDC-TestnetMintableERC20-Aave
+0xda9d4f9b69ac6C22e444eD9aF0CfC043b7a7f53f
+
+
+6.) set up hardhat configuration file
+
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
+
+/** @type import('hardhat/config').HardhatUserConfig */
+module.exports = {
+  solidity: "0.8.10",.0
+  networks: {
+    sepolia: {
+      url: "https://sepolia.infura.io/v3/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      accounts: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    },
+  },
+};
+
+
