@@ -138,4 +138,9 @@ main().catch((error) => {
   process.exitCode = 1;
 });
 
+9.) set up USDC for fees
+10.) set up sepolia (ETH) for deployment to sepolia test net
+
+11.) perform deployment to sepolia
+
 
