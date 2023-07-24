@@ -5,7 +5,11 @@
 
 sudo apt-get update
 # unlike windows I could not successfully use a later version of node
-curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+## deprecated    curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
+
+
+
 sudo bash nodesource_setup.sh
 sudo apt install nodejs build-essential
 npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
