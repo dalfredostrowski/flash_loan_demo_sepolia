@@ -34,7 +34,8 @@ https://www.reddit.com/r/Metamask/comments/1553ymi/copying_wallet_address_nothin
 
 best faucet!
 https://sepolia-faucet.pk910.de/
-
+second best:
+https://sepoliafaucet.com/
 
 
 4.) Obtain your sepolia endpoint from infura ( or similar provider ) 
@@ -54,6 +55,10 @@ USDC-TestnetMintableERC20-Aave
 
 
 6.) set up hardhat configuration file
+
+NOTE: you will have to add your personal infura address and your private key of your account ( protect this )
+
+
 
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
