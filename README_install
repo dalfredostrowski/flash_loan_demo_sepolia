@@ -39,6 +39,9 @@ https://sepolia-faucet.pk910.de/
 
 4.) Obtain your sepolia endpoint from infura ( or similar provider ) 
 
+https://www.infura.io/
+
+
 5.) Obtain AAVE address information ( provided below - though it could change )
 
 https://docs.aave.com/developers/deployed-contracts/v3-testnet-addresses
