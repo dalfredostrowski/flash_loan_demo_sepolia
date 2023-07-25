@@ -154,8 +154,29 @@ contract FlashLoan is FlashLoanSimpleReceiverBase {
 https://staging.aave.com/faucet/
 
 
-9.)
+9.) set up deployment script
 
+
+const hre = require("hardhat");
+
+async function main() {
+// contract address is from the aave site "
+//  const flashLoan = await FlashLoan.deploy(
+ //   "<pool provider>"
+//  )
+ const deployedContract = await hre.ethers.deployContract("FlashLoan",["0x0496275d34753A48320CA58103d5220d394FF77F"]);
+ await deployedContract.waitForDeployment();
+ console.log("SimpleStorage Contract Address:", await deployedContract.getAddress())
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+
+
+
+10.) test out the balance before and after from command console.
 >  const signers = await ethers.getSigners();
 undefined
 > const contract =  await ethers.getContractFactory("FlashLoan")
@@ -171,29 +192,30 @@ const cd2 = await contract.deploy("0x0496275d34753A48320CA58103d5220d394FF77F")
 #### grab the contract address....
 
 
- runner: HardhatEthersSigner {
-    _gasLimit: undefined,
-    address: '0x8c281eE5Fb76baf098EAde89D4e66703a59a2d11',
-    provider: HardhatEthersProvider {
-      _hardhatProvider: [LazyInitializationProviderAdapter],
-      _networkName: 'sepolia',
-      _blockListeners: [],
-      _transactionHashListeners: Map(0) {},
-      _eventListeners: []
-    }
-  },
-  filters: {},
-  fallback: [AsyncFunction: method] {
-    _contract: [Circular *1],
-    estimateGas: [AsyncFunction: estimateGas],
-    populateTransaction: [AsyncFunction: populateTransaction],
-    send: [AsyncFunction: send],
-    staticCall: [AsyncFunction: staticCall]
-  },
-  [Symbol(_ethersInternal_contract)]: {}
-
-
 
 11.) perform deployment to sepolia
 
+npx hardhat run --network sepolia scripts/deploy.js
 
+
+
+
+12.) 
+
+npx hardhat console --network sepolia
+Welcome to Node.js v14.21.3.
+Type ".help" for more information.
+> const contractArtifact = await ethers.getContractFactory("FlashLoan");
+undefined
+0x8c281eE5Fb76baf098EAde89D4e66703a59a2d11
+
+### input parameter is the contract number from the deploy
+> const contract = await contract.attach("0x84A5A054abcf1db6D02f5029e070A744d6bEBfa5");
+0
+
+> const result3 = await contract.requestFlashLoan('0xda9d4f9b69ac6C22e444eD9aF0CfC043b7a7f53f',99)
+
+then obtain the transaction address and input into etherscan....(sepolia)
+
+https://sepolia.etherscan.io/tx/0x33bea962af1ab968753dc361ed73f133bc219e73637a2bdca2a5c964a10d9367
+0x7fa2186037758f6c6ed08b16527cac5f0ec84b8cea46628629da09b420140dd2
