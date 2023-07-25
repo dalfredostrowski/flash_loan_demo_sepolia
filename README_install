@@ -14,6 +14,11 @@ sudo bash nodesource_setup.sh
 sudo apt install nodejs build-essential
 npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
 npm i @aave/core-v3  dotenv
+mkdir flashloan
+cd flashloan 
+npx hardhat
+
+
 
 3.) Obtain the private key from your account that you are going to use sepolia ethernet
 
