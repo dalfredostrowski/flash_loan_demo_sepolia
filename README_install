@@ -186,7 +186,13 @@ main().catch((error) => {
   process.exitCode = 1;
 });
 
+or run it directly from the 
 
+
+>  const deployedContract = await ethers.deployContract("FlashLoan",["0x0496275d34753A48320CA58103d5220d394FF77F"]);
+> await deployedContract.waitForDeployment();
+> await deployedContract.getAddress()
+'0xDAFDF7E0b925F886e084f00807652eD21Bdb47bA'
 
 10.) test out the balance before and after from command console.
 >  const signers = await ethers.getSigners();
@@ -198,7 +204,6 @@ const cd2 = await contract.deploy("0x0496275d34753A48320CA58103d5220d394FF77F")
 
 
 >const bal = await ethers.provider.getBalance(signers[0])
-> const cd = await contract.deploy()
 > const bal2 = await ethers.provider.getBalance(signers[0])
 
 #### grab the contract address....
