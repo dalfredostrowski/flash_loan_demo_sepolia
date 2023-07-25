@@ -27,6 +27,12 @@ npx hardhat
 
 https://sepoliafaucet.com/
 
+bug i experienced with metamask version: 
+https://www.reddit.com/r/Metamask/comments/1553ymi/copying_wallet_address_nothing_shows_up_when_i/
+
+
+
+
 4.) Obtain your sepolia endpoint from infura ( or similar provider ) 
 
 5.) Obtain AAVE address information ( provided below - though it could change )
