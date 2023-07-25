@@ -148,37 +148,51 @@ contract FlashLoan is FlashLoanSimpleReceiverBase {
     receive() external payable {}
 }
 
-8.) set up deployment script
 
-
-const hre = require("hardhat");
-
-async function main() {
-  console.log("deploying...");
-  const FlashLoan = await hre.ethers.getContractFactory("FlashLoan");
-// contract address is from the aave site "
-//  const flashLoan = await FlashLoan.deploy(
- //   "<pool provider>"
-//  );
-  const flashLoan = await FlashLoan.deploy("0x0496275d34753A48320CA58103d5220d394FF77F");
-  await flashLoan.deployed();
-  console.log("Flash loan contract deployed: ", flashLoan.address);
-}
-
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
-
-9.) set up USDC for fees
+8.) set up USDC for fees
 
 https://staging.aave.com/faucet/
 
 
+9.)
+
+>  const signers = await ethers.getSigners();
+undefined
+> const contract =  await ethers.getContractFactory("FlashLoan")
+undefined
+const cd2 = await contract.deploy("0x0496275d34753A48320CA58103d5220d394FF77F")
 
 
 
-10.) set up sepolia (ETH) for deployment to sepolia test net
+>const bal = await ethers.provider.getBalance(signers[0])
+> const cd = await contract.deploy()
+> const bal2 = await ethers.provider.getBalance(signers[0])
+
+#### grab the contract address....
+
+
+ runner: HardhatEthersSigner {
+    _gasLimit: undefined,
+    address: '0x8c281eE5Fb76baf098EAde89D4e66703a59a2d11',
+    provider: HardhatEthersProvider {
+      _hardhatProvider: [LazyInitializationProviderAdapter],
+      _networkName: 'sepolia',
+      _blockListeners: [],
+      _transactionHashListeners: Map(0) {},
+      _eventListeners: []
+    }
+  },
+  filters: {},
+  fallback: [AsyncFunction: method] {
+    _contract: [Circular *1],
+    estimateGas: [AsyncFunction: estimateGas],
+    populateTransaction: [AsyncFunction: populateTransaction],
+    send: [AsyncFunction: send],
+    staticCall: [AsyncFunction: staticCall]
+  },
+  [Symbol(_ethersInternal_contract)]: {}
+
+
 
 11.) perform deployment to sepolia
 
