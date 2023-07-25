@@ -58,6 +58,8 @@ USDC-TestnetMintableERC20-Aave
 
 NOTE: you will have to add your personal infura address and your private key of your account ( protect this )
 
+url:   <infura API for sepolia testnet>
+accounts: "<metamask private key for your account>"
 
 
 require("@nomicfoundation/hardhat-toolbox");
