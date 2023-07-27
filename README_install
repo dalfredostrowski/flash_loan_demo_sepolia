@@ -179,7 +179,7 @@ npx hardhat console --network sepolia
 
 >const hre = require("hardhat");
 >const deployedContract = await hre.ethers.deployContract("FlashLoan",["0x0496275d34753A48320CA58103d5220d394FF77F"]);
->await deployedContract.waitForDeployment();
+#######>await deployedContract.waitForDeployment();
 >await deployedContract.getAddress()
 >await deployedContract.requestFlashLoan('0xda9d4f9b69ac6C22e444eD9aF0CfC043b7a7f53f',919)
 
