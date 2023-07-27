@@ -167,6 +167,9 @@ https://staging.aave.com/faucet/
 
 https://chaindrop.org/?chainid=11155111&token=0x6f14c02fc1f78322cfd7d707ab90f18bad3b54f5
 
+if it is not recognized by metamask - you may have to import the USDC token under sepolia with the Sepolia USDC contract address: 
+
+https://sepolia.etherscan.io/token/0x51fce89b9f6d4c530698f181167043e1bb4abf89
 
 9.)
 
