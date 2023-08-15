@@ -161,8 +161,7 @@ contract FlashLoan is FlashLoanSimpleReceiverBase {
 }
 
 
-7.5)  npx hardhat run --network sepolia
-
+7.5)  note: I did not run a separate hardhat "node" command  - hardhat loaded in the node with the single console command!!!
 
 
 8.) set up USDC for fees
