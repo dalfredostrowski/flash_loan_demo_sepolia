@@ -161,6 +161,10 @@ contract FlashLoan is FlashLoanSimpleReceiverBase {
 }
 
 
+7.5)  npx hardhat run --network sepolia
+
+
+
 8.) set up USDC for fees
 
 https://staging.aave.com/faucet/
