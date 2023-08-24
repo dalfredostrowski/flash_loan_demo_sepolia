@@ -180,10 +180,47 @@ https://sepolia.etherscan.io/token/0x51fce89b9f6d4c530698f181167043e1bb4abf89
 
 npx hardhat console --network sepolia
 
+
+
+> const hre = require("hardhat");
+undefined
+> const deployedContract = await hre.ethers.deployContract("FlashLoan",["0x0496275d34753A48320CA58103d5220d394FF77F"]);
+undefined
+> let dp = await deployedContract.getAddress()
+undefined
+> const token = await ethers.getContractAt("IERC20", "0x55D45c6649a0Ff74097d66aa6A6ae18a66Bb2fF3" )
+undefined
+> await token.balanceOf(dp)
+0n
+>
+I then manually 'send' my token amount directlty to 'dp' ( the deployed contract address )
+
+Then I specify the token address in the flash loan request.  ( from the address ) ff3 is actually the USDC, so my
+best example is DAI
+
+
+
+
+
+
+
+
+
+
+
+
 >const hre = require("hardhat");
 >const deployedContract = await hre.ethers.deployContract("FlashLoan",["0x0496275d34753A48320CA58103d5220d394FF77F"]);
 #######>await deployedContract.waitForDeployment();
->await deployedContract.getAddress()
+>let dp = await deployedContract.getAddress()
+#aUSDC
+>const token = await ethers.getContractAt("IERC20", "0x55D45c6649a0Ff74097d66aa6A6ae18a66Bb2fF3" )
+>await token.balanceOf(dp)
+
+
+
+
+
 
 ### the address input is the LENDING POOL not your contract address - so do not confuse (AAVE address - see earlier link) 
 >await deployedContract.requestFlashLoan('0xda9d4f9b69ac6C22e444eD9aF0CfC043b7a7f53f',919)
