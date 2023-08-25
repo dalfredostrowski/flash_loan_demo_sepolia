@@ -207,6 +207,7 @@ I then manually 'send' my token amount directlty to 'dp' ( the deployed contract
 
 
 
+
 ## from sepolia etherscan io: 
 Transaction Hash:
 0x81c3e398a3ff0d2e47943f673f25c04a581aa61f25ba569f1ba1287a7ac46f45 
@@ -244,3 +245,9 @@ EURS...
 
 
 
+REVIEW : 
+money spent:
+1.) deployment of flash loan contract: sepolia test ethereum ( i identified this through the hardhat config )
+2.) transfer of my designated token to cover the 'premium' of the loan 
+in my case I used EURS and I needed some sepolia ethereum to cover the 'send' to the contract
+3.) the amount from the deployed contract as the premium (in this particular the token) 
