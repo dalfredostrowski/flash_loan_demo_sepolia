@@ -188,6 +188,10 @@ undefined
 undefined
 > let dp = await deployedContract.getAddress()
 undefined
+
+
+
+> const tokenEURS = await ethers.getContractAt("IERC20", "0x8D5C78B896d69d68F6F9C984702c170293428701" )
 > const token = await ethers.getContractAt("IERC20", "0x82fb927676b53b6eE07904780c7be9b4B50dB80b" )
 undefined
 > await token.balanceOf(dp)
