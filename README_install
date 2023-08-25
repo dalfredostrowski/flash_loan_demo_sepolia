@@ -196,8 +196,6 @@ undefined
 
 
 > const tokenEURS = await ethers.getContractAt("IERC20", "0xe20cf465a163c395e7Dde1466Cdd1aBe695B4658" )
-> const token = await ethers.getContractAt("IERC20", "0x82fb927676b53b6eE07904780c7be9b4B50dB80b" )
-undefined
 > await token.balanceOf(dp)
 0n
 >
@@ -205,81 +203,44 @@ I then manually 'send' my token amount directlty to 'dp' ( the deployed contract
 
 
 # in this case I am going to request an amount in EURS ( I am going to assume six places conversion
->await deployedContract.requestFlashLoan('0xe20cf465a163c395e7Dde1466Cdd1aBe695B4658',1000000)
+>const tx = await deployedContract.requestFlashLoan('0xe20cf465a163c395e7Dde1466Cdd1aBe695B4658',1000)
 
 
 
-
-
-
-OR deploy from a script 
-9a.) set up deployment script
-
-
-const hre = require("hardhat");
-
-async function main() {
-// contract address is from the aave site "
-//  const flashLoan = await FlashLoan.deploy(
- //   "<pool provider>"
-//  )
- const deployedContract = await hre.ethers.deployContract("FlashLoan",["0x0496275d34753A48320CA58103d5220d394FF77F"]);
- await deployedContract.waitForDeployment();
- console.log("SimpleStorage Contract Address:", await deployedContract.getAddress())
-}
-
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
-
-or run it directly from the 
-
-
->  const deployedContract = await ethers.deployContract("FlashLoan",["0x0496275d34753A48320CA58103d5220d394FF77F"]);
-> await deployedContract.waitForDeployment();
-> await deployedContract.getAddress()
-'0xDAFDF7E0b925F886e084f00807652eD21Bdb47bA'
-
-10.) test out the balance before and after from command console.
->  const signers = await ethers.getSigners();
-undefined
-> const contract =  await ethers.getContractFactory("FlashLoan")
-undefined
-const cd2 = await contract.deploy("0x0496275d34753A48320CA58103d5220d394FF77F")
-
-
-
->const bal = await ethers.provider.getBalance(signers[0])
-> const bal2 = await ethers.provider.getBalance(signers[0])
-
-#### grab the contract address....
-
-
-
-11.) perform deployment to sepolia
-
-npx hardhat run --network sepolia scripts/deploy.js
-
-
-
-
-12.) 
-
-npx hardhat console --network sepolia
-Welcome to Node.js v14.21.3.
-Type ".help" for more information.
-> const contractArtifact = await ethers.getContractFactory("FlashLoan");
-undefined
+## from sepolia etherscan io: 
+Transaction Hash:
+0x81c3e398a3ff0d2e47943f673f25c04a581aa61f25ba569f1ba1287a7ac46f45 
+Status:
+Success
+Block:
+4159149
+1 Block Confirmation
+Timestamp:
+34 secs ago (Aug-25-2023 05:33:00 PM +UTC)
+From:
 0x8c281eE5Fb76baf098EAde89D4e66703a59a2d11
+Interacted With (To):
+ 0x5a12e71E99EEE2AF1cE9DBe0D0f67AA0Df5C4DA4
+ERC-20 Tokens Transferred: 2
+From
+0x0C4b9F...3dC3CfD7
+To
+0x5a12e7...Df5C4DA4
+For
+10
 
-### input parameter is the contract number from the deploy
-> const contract = await contract.attach("0x84A5A054abcf1db6D02f5029e070A744d6bEBfa5");
-0
+EURS...
+(EURS...)
+From
+0x5a12e7...Df5C4DA4
+To
+0x0C4b9F...3dC3CfD7
+For
+10.01
 
-> const result3 = await contract.requestFlashLoan('0xda9d4f9b69ac6C22e444eD9aF0CfC043b7a7f53f',99)
+EURS...
+(EURS...)
 
-then obtain the transaction address and input into etherscan....(sepolia)
 
-https://sepolia.etherscan.io/tx/0x33bea962af1ab968753dc361ed73f133bc219e73637a2bdca2a5c964a10d9367
-0x7fa2186037758f6c6ed08b16527cac5f0ec84b8cea46628629da09b420140dd2
+
+
