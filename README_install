@@ -59,7 +59,22 @@ url:   <infura API for sepolia testnet>
 accounts: "<metamask private key for your account that is to be connected via metamask and have connected>"
 
 
-0
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
+
+/** @type import('hardhat/config').HardhatUserConfig */
+module.exports = {
+  solidity: "0.8.10",.0
+  networks: {
+    sepolia: {
+      url: "https://sepolia.infura.io/v3/",
+      accounts: ["XXXXXXXXXXXXXXXXXXXXXXX"],
+    },
+  },
+};
+
+
+
 7.) set up the contract
 
 pragma solidity 0.8.10;
