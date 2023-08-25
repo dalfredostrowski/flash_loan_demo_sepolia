@@ -184,6 +184,10 @@ npx hardhat console --network sepolia
 
 > const hre = require("hardhat");
 undefined
+
+# I am going to reference the private address specified in my hardhat config file for the deployment fees
+
+
 > const deployedContract = await hre.ethers.deployContract("FlashLoan",["0x0496275d34753A48320CA58103d5220d394FF77F"]);
 undefined
 > let dp = await deployedContract.getAddress()
@@ -199,13 +203,9 @@ undefined
 >
 I then manually 'send' my token amount directlty to 'dp' ( the deployed contract address )
 
-Then I specify the token address in the flash loan request.  ( from the address ) ff3 is actually the USDC, so my
-best example is DAI
 
-
-
-
-
+# in this case I am going to request an amount in EURS ( I am going to assume six places conversion
+>await deployedContract.requestFlashLoan('0x8D5C78B896d69d68F6F9C984702c170293428701',1000000)
 
 
 
