@@ -6,10 +6,7 @@
 sudo apt-get update
 # unlike windows I could not successfully use a later version of node
 ## deprecated    curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
-
-
-
+curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs build-essential
 npm install --save-dev @nomiclabs/hardhat-ethers ethers @nomiclabs/hardhat-waffle ethereum-waffle chai
@@ -62,20 +59,7 @@ url:   <infura API for sepolia testnet>
 accounts: "<metamask private key for your account that is to be connected via metamask and have connected>"
 
 
-require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
-
-/** @type import('hardhat/config').HardhatUserConfig */
-module.exports = {
-  solidity: "0.8.10",.0
-  networks: {
-    sepolia: {
-      url: "https://sepolia.infura.io/v3/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-      accounts: ["xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"],
-    },
-  },
-};
-
+0
 7.) set up the contract
 
 pragma solidity 0.8.10;
