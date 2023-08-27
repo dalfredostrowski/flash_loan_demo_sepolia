@@ -202,7 +202,7 @@ I then manually 'send' my token amount directlty to 'dp' ( the deployed contract
 
 
 # in this case I am going to request an amount in EURS ( I am going to assume six places conversion
->const tx = await deployedContract.requestFlashLoan('0xe20cf465a163c395e7Dde1466Cdd1aBe695B4658',1000)
+>const tx = await deployedContract.requestFlashLoan('0xe20cf465a163c395e7Dde1466Cdd1aBe695B4658',100)
 
 
 
