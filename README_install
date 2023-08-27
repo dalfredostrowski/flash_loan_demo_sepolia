@@ -163,7 +163,7 @@ contract FlashLoan is FlashLoanSimpleReceiverBase {
 7.5)  note: I did not run a separate hardhat "node" command - as we are referencing the sepolia remote testnet
 
 
-8.) set up USDC for fees
+8.) set up EURS for fees
 
 https://staging.aave.com/faucet/
 
